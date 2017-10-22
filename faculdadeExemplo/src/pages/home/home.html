@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      ionic2 + API
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card *ngFor="let user of users" (click)="passaAluno(user.id_curso)">
+    <ion-list>
+      <ion-card-content><h3>{{user.titulo}}</h3></ion-card-content>
+    </ion-list>
+  </ion-card>
+</ion-content>
