@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, Response, ResponseOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 import { Observable } from 'rxjs/Observable';
@@ -17,6 +17,16 @@ export class ServiceProvider {
 
   getAlunos(idCurso:any){
     return this.http.get(this.api+'listaAlunos.php?codigo_curso='+idCurso).map(res => res.json());
+  }
+
+  postLogin(parans){
+    let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
+    return this.http.post(this.api+"loginApp.php", parans,{
+        headers:headers,
+        method:"POST"
+    }).map(
+      (res:Response) => {return res.json()}
+    );
   }
 
 

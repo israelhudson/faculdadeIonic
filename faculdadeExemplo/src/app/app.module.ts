@@ -1,3 +1,4 @@
+import { Login } from './../pages/login/login';
 import { ServiceProvider } from './../providers/service-provider';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -16,7 +17,8 @@ import { HttpModule } from '@angular/http';
   declarations: [
     MyApp,
     HomePage,
-    AlunosPage
+    AlunosPage,
+    Login
   ],
   imports: [
     HttpModule,
@@ -27,7 +29,8 @@ import { HttpModule } from '@angular/http';
   entryComponents: [
     AlunosPage,
     MyApp,
-    HomePage
+    HomePage,
+    Login
   ],
   providers: [
     ServiceProvider,
